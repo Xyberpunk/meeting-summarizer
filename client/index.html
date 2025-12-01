@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meeting Transcript Summarizer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <div>
+          <h1>Meeting Transcript Summarizer</h1>
+          <p>Paste a transcript, get crisp bullet points.</p>
+        </div>
+
+        <button id="summarizeBtn" class="primary" disabled>
+          Summarize
+        </button>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <div class="cardHead">
+            <h2>Transcript</h2>
+            <span id="charCounter" class="counter warn">0 chars</span>
+          </div>
+
+          <textarea
+            id="transcriptInput"
+            placeholder="Paste meeting transcript here..."
+          ></textarea>
+
+          <div class="hint">
+            Tip: include speaker labels if you have them — models summarize better.
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="cardHead">
+            <h2>Summary</h2>
+            <span id="modelChip" class="chip hidden"></span>
+          </div>
+
+          <div id="errorBox" class="error hidden"></div>
+
+          <div id="emptyState" class="empty">
+            Your summary will appear here.
+          </div>
+
+          <div id="summaryBox" class="summary hidden"></div>
+
+          <div id="usageBox" class="usage hidden"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        Built with OpenRouter + HTML/CSS/JS + Express
+      </footer>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
